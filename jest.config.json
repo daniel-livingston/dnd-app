@@ -1,0 +1,7 @@
+{
+	"transform": {
+		"^.+\\.(t|j)s$": "babel-jest"
+	},
+	"setupFiles": ["<rootDir>/tests/setupTests.js"],
+	"snapshotSerializers": ["enzyme-to-json/serializer"]
+}
