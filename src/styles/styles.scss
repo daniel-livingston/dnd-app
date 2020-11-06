@@ -1,2 +1,8 @@
 @import "./base/settings";
 @import "./base/base";
+
+@import "./components/App";
+@import "./components/Sidebar";
+
+@import "./themes/dark";
+@import "./themes/light";

@@ -1,0 +1,48 @@
+.theme__light {
+	background-color: $light-theme-bg;
+	color: $light-theme-text;
+
+	header,
+	footer,
+	.sidebar {
+		background-color: $light-theme-header;
+	}
+
+	svg {
+		fill: $light-theme-text;
+	}
+
+	input,
+	select,
+	button,
+	.form__link,
+	.link {
+		background-color: $light-theme-header;
+		color: $light-theme-text;
+		border: 1px solid lighten($light-theme-header, 10%);
+	}
+
+	button:hover {
+		background-color: lighten($light-theme-header, 10%);
+	}
+
+	.sidebar__item__title {
+		color: $light-theme-text;
+	}
+
+	.content__header,
+	.canvas-toolbar {
+		background-color: $light-theme-header;
+	}
+
+	.dice-history__header,
+	.form__section-header {
+		border-bottom: 1px solid lighten($light-theme-header, 10%);
+	}
+
+	.card {
+		background-color: $light-theme-header;
+		color: $light-theme-text;
+		border: 1px solid lighten($light-theme-header, 10%);
+	}
+}

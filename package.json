@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"build": "webpack --config=webpack.production.config.js --progress",
-		"build:dev": "webpack --config=webpack.production.config.js --watch --progress",
+		"build:dev": "webpack --config=webpack.development.config.js --watch --progress",
 		"dev": "concurrently \"npm run build:dev\" \"npm run start:dev\"",
 		"start": "node server/index",
 		"start:dev": "nodemon server/index",

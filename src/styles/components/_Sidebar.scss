@@ -1,0 +1,47 @@
+// Settings designed for mobile first
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 0.5rem;
+	max-width: $sidebar-width-s;
+}
+
+.sidebar__link {
+	text-decoration: none;
+}
+
+.sidebar__item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: $spacing-s 0;
+	padding: $spacing-xs;
+}
+
+.sidebar__icon {
+	height: $icon-m;
+	width: auto;
+}
+
+.sidebar__item__title {
+	font-family: $header-font-family;
+	font-size: $header-s;
+	text-align: center;
+}
+
+// Tablet size or above
+@media (min-width: $tablet-width) {
+	.sidebar {
+		max-width: $sidebar-width-l;
+	}
+
+	.sidebar__icon {
+		height: $icon-l;
+	}
+
+	.sidebar__item__title {
+		font-size: $header-m;
+	}
+}
