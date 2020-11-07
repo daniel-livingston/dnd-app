@@ -1,6 +1,11 @@
-const { app } = require("./app");
+const chalk = require("chalk");
+const { httpServer } = require("./app");
 
 const port = process.env.PORT || 8080;
-app.listen(port, () => {
-	console.log(`Listening on port ${port}`);
+httpServer.listen(port, () => {
+	console.log(
+		chalk.green(new Date().toLocaleTimeString() + ":"),
+		"Server is listening at",
+		chalk.underline(`localhost:${port}`)
+	);
 });

@@ -7,8 +7,9 @@
 		"build": "webpack --config=webpack.production.config.js --progress",
 		"build:dev": "webpack --config=webpack.development.config.js --watch --progress",
 		"dev": "concurrently \"npm run build:dev\" \"npm run start:dev\"",
+		"mongo:dev": "/Users/Daniel/mongodb/bin/mongod --dbpath=/Users/Daniel/mongodb-data",
 		"start": "node server/index",
-		"start:dev": "nodemon server/index",
+		"start:dev": "env-cmd -f ./config/dev.env nodemon server/index",
 		"test": "jest --config=jest.config.json"
 	},
 	"author": "Daniel Livingston",
