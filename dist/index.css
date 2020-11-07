@@ -363,6 +363,7 @@ html {
 
 body {
   font-size: 1.4rem;
+  font-family: "Montserrat", Arial, sans-serif;
 }
 
 h1,
@@ -370,8 +371,19 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: "Staatliches", Arial, sans-serif;
 }
 
 .app {
@@ -379,6 +391,73 @@ h6 {
   height: 100vh;
   display: flex;
   flex-direction: row;
+}
+
+.form__section-header {
+  font-size: 2.4rem;
+  padding: 1rem 0;
+}
+
+.form__section-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.form__section-info {
+  flex-grow: 0.75;
+  width: 75%;
+}
+
+.form__input-title {
+  font-size: 1.8rem;
+}
+
+.form__input-description {
+  font-size: 1.2rem;
+}
+
+.form__error {
+  font-size: 1.2rem;
+  color: #ff0000;
+}
+
+.form__select,
+.form__input,
+.form__link {
+  flex-grow: 0.25;
+  width: 25%;
+}
+
+.form__link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .form {
+    width: 576px;
+    margin: 0 auto;
+  }
+}
+.form__button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.card {
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px #333;
 }
 
 .sidebar {
@@ -423,7 +502,47 @@ h6 {
   }
 
   .sidebar__item__title {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+  }
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.content__header {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.link {
+  border: none !important;
+  align-self: center;
+}
+
+.content__header__title {
+  font-family: "Staatliches", Arial, sans-serif;
+  font-size: 3.2rem;
+}
+
+.content__header__description {
+  display: none;
+  font-size: 1.4rem;
+}
+
+.content__body {
+  padding: 1.5rem;
+  flex-grow: 1;
+  max-height: 100%;
+}
+
+@media (min-width: 768px) {
+  .content__header__description {
+    display: block;
   }
 }
 .theme__dark {

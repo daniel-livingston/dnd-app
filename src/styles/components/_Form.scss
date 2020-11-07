@@ -1,0 +1,67 @@
+.form__section-header {
+	font-size: $header-l;
+	padding: $spacing-s 0;
+}
+
+.form__section-body {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: $spacing-s 0;
+}
+
+.form__section-info {
+	flex-grow: 0.75;
+	width: 75%;
+}
+
+.form__input-title {
+	font-size: $header-m;
+}
+
+.form__input-description {
+	font-size: $text-s;
+}
+
+.form__error {
+	font-size: $text-s;
+	color: $error-text;
+}
+
+.form__select,
+.form__input,
+.form__link {
+	flex-grow: 0.25;
+	width: 25%;
+}
+
+.form__link {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form {
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	.form {
+		width: 576px;
+		margin: 0 auto;
+	}
+}
+
+.form__button-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.card {
+	padding: $spacing-s;
+	margin-top: $spacing-s;
+	margin-bottom: $spacing-s;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 5px #333;
+}

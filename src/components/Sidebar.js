@@ -22,7 +22,7 @@ const Sidebar = () => (
 				<div className='sidebar__item__title'>Home</div>
 			</div>
 		</Link>
-		<Link className='sidebar__link' to='/'>
+		<Link className='sidebar__link' to='/canvas'>
 			<div className='sidebar__item'>
 				<svg
 					className='sidebar__icon'
@@ -38,7 +38,7 @@ const Sidebar = () => (
 				<div className='sidebar__item__title'>Canvas</div>
 			</div>
 		</Link>
-		<Link className='sidebar__link' to='/'>
+		<Link className='sidebar__link' to='/dice'>
 			<div className='sidebar__item'>
 				<svg
 					viewBox='0 0 16 16'
@@ -56,7 +56,7 @@ const Sidebar = () => (
 				<div className='sidebar__item__title'>Dice</div>
 			</div>
 		</Link>
-		<Link className='sidebar__link' to='/'>
+		<Link className='sidebar__link' to='/settings'>
 			<div className='sidebar__item'>
 				<svg
 					viewBox='0 0 16 16'
