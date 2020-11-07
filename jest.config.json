@@ -1,7 +1,18 @@
 {
-	"transform": {
-		"^.+\\.(t|j)s$": "babel-jest"
-	},
-	"setupFiles": ["<rootDir>/tests/setupTests.js"],
-	"snapshotSerializers": ["enzyme-to-json/serializer"]
+	"projects": [
+		{
+			"displayName": "react app",
+			"testMatch": ["<rootDir>/tests/src/**/*.test.js"],
+			"transform": {
+				"^.+\\.(t|j)s$": "babel-jest"
+			},
+			"setupFiles": ["<rootDir>/tests/setupTests.js"],
+			"snapshotSerializers": ["enzyme-to-json/serializer"]
+		},
+		{
+			"displayName": "server",
+			"testMatch": ["<rootDir>/tests/server/**/*.test.js"],
+			"testEnvironment": "node"
+		}
+	]
 }

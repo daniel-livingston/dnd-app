@@ -4,14 +4,6 @@ const passwordValidator = require("password-validator");
 const validator = require("validator");
 
 const userSchema = new mongoose.Schema({
-	firstName: {
-		type: String,
-		trim: true,
-	},
-	lastName: {
-		type: String,
-		trim: true,
-	},
 	email: {
 		type: String,
 		trim: true,

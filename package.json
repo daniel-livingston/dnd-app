@@ -10,7 +10,7 @@
 		"mongo:dev": "/Users/Daniel/mongodb/bin/mongod --dbpath=/Users/Daniel/mongodb-data",
 		"start": "node server/index",
 		"start:dev": "env-cmd -f ./config/dev.env nodemon server/index",
-		"test": "jest --config=jest.config.json"
+		"test": "env-cmd -f ./config/test.env jest --config=jest.config.json --runInBand --detectOpenHandles"
 	},
 	"author": "Daniel Livingston",
 	"license": "ISC",
