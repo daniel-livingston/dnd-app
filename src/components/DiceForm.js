@@ -43,6 +43,7 @@ export class DiceForm extends React.Component {
 			modifier: this.props.modifier,
 			total,
 			time: new Date(),
+			name: this.props.name || "Guest",
 		};
 
 		this.props.rollDice(roll);
@@ -98,6 +99,7 @@ const mapStateToProps = (state) => ({
 	sides: state.dice.sides,
 	modifier: state.dice.modifier,
 	last: state.dice.last,
+	name: state.user.username,
 });
 
 const mapDispatchToProps = (dispatch) => ({

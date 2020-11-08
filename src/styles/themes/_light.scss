@@ -45,4 +45,8 @@
 		color: $light-theme-text;
 		border: 1px solid lighten($light-theme-header, 10%);
 	}
+
+	.accent {
+		color: $light-theme-accent;
+	}
 }
