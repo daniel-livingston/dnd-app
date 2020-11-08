@@ -4,10 +4,10 @@ import { BrowserRouter, Switch, Redirect, Route } from "react-router-dom";
 import io from "socket.io-client";
 import Sidebar from "./Sidebar";
 // import LoadingPage from "./LoadingPage";
-// const HomePage = React.lazy(() => import("./HomePage"));
 // const LoginPage = React.lazy(() => import("./LoginPage"));
 const CanvasView = React.lazy(() => import("./CanvasView"));
 const DiceView = React.lazy(() => import("./DiceView"));
+const HomeView = React.lazy(() => import("./HomeView"));
 const SettingsView = React.lazy(() => import("./SettingsView"));
 // const SignupPage = React.lazy(() => import("./SignupPage"));
 import { setHistory, addToHistory } from "../actions/dice";
@@ -23,7 +23,7 @@ export class App extends React.Component {
 					<Suspense fallback={<div>Loading</div>}>
 						<Switch>
 							<Route path='/' exact>
-								<h1>Home</h1>
+								<HomeView />
 							</Route>
 							<Route path='/canvas' exact>
 								<CanvasView />

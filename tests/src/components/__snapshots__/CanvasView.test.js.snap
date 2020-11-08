@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CanvasView> renders correctly 1`] = `
+<Connect(View)
+  description="Draw with others in the party to show a map, a scene, or to just have fun."
+  title="Canvas"
+>
+  <Connect(Canvas) />
+</Connect(View)>
+`;

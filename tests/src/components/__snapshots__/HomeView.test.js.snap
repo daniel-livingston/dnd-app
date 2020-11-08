@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomeView> renders correctly 1`] = `
+<Connect(View)
+  description="Create or join a room to play with friends."
+  title="Home"
+>
+  <Connect(Home) />
+</Connect(View)>
+`;
