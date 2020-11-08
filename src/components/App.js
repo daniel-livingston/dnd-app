@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar";
 // import LoadingPage from "./LoadingPage";
 // const HomePage = React.lazy(() => import("./HomePage"));
 // const LoginPage = React.lazy(() => import("./LoginPage"));
-// const CanvasPage = React.lazy(() => import("./CanvasPage"));
+const CanvasView = React.lazy(() => import("./CanvasView"));
 const DiceView = React.lazy(() => import("./DiceView"));
 const SettingsView = React.lazy(() => import("./SettingsView"));
 // const SignupPage = React.lazy(() => import("./SignupPage"));
@@ -26,7 +26,7 @@ export class App extends React.Component {
 								<h1>Home</h1>
 							</Route>
 							<Route path='/canvas' exact>
-								<h1>Canvas</h1>
+								<CanvasView />
 							</Route>
 							<Route path='/dice' exact>
 								<DiceView />

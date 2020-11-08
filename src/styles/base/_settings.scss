@@ -37,6 +37,9 @@ $tablet-width: 768px;
 $sidebar-width-s: 48px;
 $sidebar-width-l: 64px;
 
+$toolbar-height-s: 36px;
+$toolbar-height-l: 48px;
+
 $spacing-xs: 0.5rem;
 $spacing-s: 1rem;
 $spacing-m: 1.5rem;
@@ -45,15 +48,17 @@ $spacing-xl: 2.5rem;
 
 /*******************************************
  *
- * Sizing
+ * Themes
  *
  *******************************************/
 $dark-theme-text: #eee;
 $dark-theme-bg: #222;
 $dark-theme-header: #111;
 $dark-theme-accent: rgb(0, 195, 255);
+
 $light-theme-text: #111;
 $light-theme-bg: #eee;
 $light-theme-header: #2bcfcc;
 $light-theme-accent: rgb(0, 81, 255);
+
 $error-text: #ff0000;
