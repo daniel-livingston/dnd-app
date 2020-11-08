@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DiceView> renders correctly 1`] = `
+<Connect(View)
+  description="Customize your dice rolls and share your rolls with everyone in the room."
+  title="Dice"
+>
+  <div
+    className="dice-wrapper"
+  >
+    <div
+      className="dice-container"
+    >
+      <Connect(DiceForm) />
+      <Connect(DiceHistory) />
+    </div>
+  </div>
+</Connect(View)>
+`;

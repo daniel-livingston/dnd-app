@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DiceHistory> renders correctly with empty history 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Connect(DiceHistory)>
+    <DiceHistory
+      dispatch={[Function]}
+      history={Array []}
+    >
+      <div
+        className="dice-history"
+      />
+    </DiceHistory>
+  </Connect(DiceHistory)>
+</Provider>
+`;
+
+exports[`<DiceHistory> renders correctly with populated history 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Connect(DiceHistory)>
+    <DiceHistory
+      dispatch={[Function]}
+      history={
+        Array [
+          Object {
+            "modifier": 0,
+            "name": "Testname",
+            "number": 3,
+            "rolls": Array [
+              1,
+              3,
+              4,
+            ],
+            "sides": 6,
+            "time": 1970-01-01T00:00:00.000Z,
+            "total": 8,
+          },
+        ]
+      }
+    >
+      <div
+        className="dice-history"
+      >
+        <div
+          className="dice-history__item"
+          key="Testname:0"
+        >
+          <div
+            className="dice-history__item__overview"
+          >
+            7:00:00 PM
+            : 
+            <span
+              className="accent"
+            >
+              Testname
+            </span>
+             
+            rolled 
+            <span
+              className="accent"
+            >
+              8
+            </span>
+            !
+          </div>
+          <div
+            className="dice-history__item__details"
+          >
+            3
+            d
+            6
+            : 
+            1, 3, 4
+             +
+            0
+          </div>
+        </div>
+      </div>
+    </DiceHistory>
+  </Connect(DiceHistory)>
+</Provider>
+`;

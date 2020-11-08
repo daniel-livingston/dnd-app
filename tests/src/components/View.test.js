@@ -3,7 +3,7 @@ import { mount, shallow } from "enzyme";
 import { MemoryRouter, Link } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "../../../src/store/configureStore";
-import View from "../../../src/components/View";
+import View, { View as DisconnectedView } from "../../../src/components/View";
 import { setUser } from "../../../src/actions/user";
 
 const wrappedView = (
@@ -16,7 +16,9 @@ const wrappedView = (
 
 describe("<View>", () => {
 	test("renders correctly", () => {
-		const wrapper = shallow(wrappedView);
+		const wrapper = shallow(
+			<DisconnectedView title='Test title' description='Test description' />
+		);
 		expect(wrapper).toMatchSnapshot();
 	});
 

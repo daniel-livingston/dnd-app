@@ -1,15 +1,24 @@
-.dice-container {
-	height: 100%;
+.dice-wrapper {
 	width: 100%;
+	height: 100%;
+}
+
+.dice-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
 }
 
 .dice-history {
-	height: calc(100vh - 382px);
+	flex-grow: 1;
+	flex-shrink: 0;
+	flex-basis: 300px;
 	overflow: auto;
 }
 
 .dice-history__item {
-	margin: $spacing-m 0;
+	margin: $spacing-m 0 0 0;
 }
 
 .dice-history__item__overview {
@@ -26,5 +35,6 @@
 		width: 576px;
 		margin-left: auto;
 		margin-right: auto;
+		margin-bottom: 0;
 	}
 }

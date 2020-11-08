@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DiceForm> renders correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Connect(DiceForm)>
+    <DiceForm
+      addToHistory={[Function]}
+      last={Object {}}
+      modifier={0}
+      number={1}
+      rollDice={[Function]}
+      sides={20}
+      updateModifier={[Function]}
+      updateNumber={[Function]}
+      updateSides={[Function]}
+    >
+      <Form
+        sections={
+          Array [
+            Object {
+              "header": "Dice Roller",
+              "items": Array [
+                Object {
+                  "description": "Choose the number of dice to roll.",
+                  "onChange": [Function],
+                  "options": Array [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                  ],
+                  "title": "Number",
+                  "type": "select",
+                  "value": 1,
+                },
+                Object {
+                  "description": "Choose the number of sides for the dice.",
+                  "onChange": [Function],
+                  "options": Array [
+                    4,
+                    6,
+                    8,
+                    10,
+                    12,
+                    20,
+                    100,
+                  ],
+                  "title": "Sides",
+                  "type": "select",
+                  "value": 20,
+                },
+                Object {
+                  "description": "Choose the modifier to add onto the roll.",
+                  "onChange": [Function],
+                  "title": "Modifier",
+                  "type": "number",
+                  "value": 0,
+                },
+              ],
+            },
+          ]
+        }
+        submit={
+          Object {
+            "buttonId": "roll-dice-button",
+            "buttonName": "Roll dice",
+            "onSubmit": [Function],
+          }
+        }
+      >
+        <form
+          className="form"
+          onSubmit={[Function]}
+        >
+          <div
+            className="form__section"
+            key="Dice Roller"
+          >
+            <h2
+              className="form__section-header"
+            >
+              Dice Roller
+            </h2>
+            <div
+              className="form__section-body"
+              key="Number"
+            >
+              <div
+                className="form__section-info"
+              >
+                <h3
+                  className="form__input-title"
+                >
+                  Number
+                </h3>
+                <p
+                  className="form__input-description"
+                >
+                  Choose the number of dice to roll.
+                </p>
+              </div>
+              <select
+                className="form__select"
+                onChange={[Function]}
+                value={1}
+              >
+                <option
+                  key="1"
+                  value={1}
+                >
+                  1
+                </option>
+                <option
+                  key="2"
+                  value={2}
+                >
+                  2
+                </option>
+                <option
+                  key="3"
+                  value={3}
+                >
+                  3
+                </option>
+                <option
+                  key="4"
+                  value={4}
+                >
+                  4
+                </option>
+                <option
+                  key="5"
+                  value={5}
+                >
+                  5
+                </option>
+                <option
+                  key="6"
+                  value={6}
+                >
+                  6
+                </option>
+              </select>
+            </div>
+            <div
+              className="form__section-body"
+              key="Sides"
+            >
+              <div
+                className="form__section-info"
+              >
+                <h3
+                  className="form__input-title"
+                >
+                  Sides
+                </h3>
+                <p
+                  className="form__input-description"
+                >
+                  Choose the number of sides for the dice.
+                </p>
+              </div>
+              <select
+                className="form__select"
+                onChange={[Function]}
+                value={20}
+              >
+                <option
+                  key="4"
+                  value={4}
+                >
+                  4
+                </option>
+                <option
+                  key="6"
+                  value={6}
+                >
+                  6
+                </option>
+                <option
+                  key="8"
+                  value={8}
+                >
+                  8
+                </option>
+                <option
+                  key="10"
+                  value={10}
+                >
+                  10
+                </option>
+                <option
+                  key="12"
+                  value={12}
+                >
+                  12
+                </option>
+                <option
+                  key="20"
+                  value={20}
+                >
+                  20
+                </option>
+                <option
+                  key="100"
+                  value={100}
+                >
+                  100
+                </option>
+              </select>
+            </div>
+            <div
+              className="form__section-body"
+              key="Modifier"
+            >
+              <div
+                className="form__section-info"
+              >
+                <h3
+                  className="form__input-title"
+                >
+                  Modifier
+                </h3>
+                <p
+                  className="form__input-description"
+                >
+                  Choose the modifier to add onto the roll.
+                </p>
+              </div>
+              <input
+                className="form__input"
+                onChange={[Function]}
+                type="number"
+                value={0}
+              />
+            </div>
+          </div>
+          <div
+            className="form__button-container"
+          >
+            <button
+              className="form__button"
+              id="roll-dice-button"
+            >
+              Roll dice
+            </button>
+          </div>
+        </form>
+      </Form>
+    </DiceForm>
+  </Connect(DiceForm)>
+</Provider>
+`;
