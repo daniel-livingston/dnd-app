@@ -11,7 +11,7 @@ const wrappedSidebar = (
 
 describe("<Sidebar>", () => {
 	test("renders correctly", () => {
-		const wrapper = shallow(wrappedSidebar);
+		const wrapper = shallow(<Sidebar />);
 		expect(wrapper).toMatchSnapshot();
 	});
 

@@ -1,0 +1,290 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`link input renders link input correctly 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <div
+    className="form__section"
+    key="Test header"
+  >
+    <h2
+      className="form__section-header"
+    >
+      Test header
+    </h2>
+    <div
+      className="form__section-body"
+      key="Test title"
+    >
+      <div
+        className="form__section-info"
+      >
+        <h3
+          className="form__input-title"
+        >
+          Test title
+        </h3>
+        <p
+          className="form__input-description"
+        >
+          Test description
+        </p>
+      </div>
+      <Link
+        className="form__link"
+        to="/test"
+      >
+        Test Link
+      </Link>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`number input renders number input correctly 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <div
+    className="form__section"
+    key="Test header"
+  >
+    <h2
+      className="form__section-header"
+    >
+      Test header
+    </h2>
+    <div
+      className="form__section-body"
+      key="Test title"
+    >
+      <div
+        className="form__section-info"
+      >
+        <h3
+          className="form__input-title"
+        >
+          Test title
+        </h3>
+        <p
+          className="form__input-description"
+        >
+          Test description
+        </p>
+      </div>
+      <input
+        className="form__input"
+        onChange={[MockFunction]}
+        type="number"
+        value=""
+      />
+    </div>
+  </div>
+</form>
+`;
+
+exports[`password input renders text input correctly 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <div
+    className="form__section"
+    key="Test header"
+  >
+    <h2
+      className="form__section-header"
+    >
+      Test header
+    </h2>
+    <div
+      className="form__section-body"
+      key="Test title"
+    >
+      <div
+        className="form__section-info"
+      >
+        <h3
+          className="form__input-title"
+        >
+          Test title
+        </h3>
+        <p
+          className="form__input-description"
+        >
+          Test description
+        </p>
+      </div>
+      <input
+        className="form__input"
+        onChange={[MockFunction]}
+        placeholder="Test title"
+        type="password"
+        value=""
+      />
+    </div>
+  </div>
+</form>
+`;
+
+exports[`select input renders select correctly 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <div
+    className="form__section"
+    key="Test header"
+  >
+    <h2
+      className="form__section-header"
+    >
+      Test header
+    </h2>
+    <div
+      className="form__section-body"
+      key="Test title"
+    >
+      <div
+        className="form__section-info"
+      >
+        <h3
+          className="form__input-title"
+        >
+          Test title
+        </h3>
+        <p
+          className="form__input-description"
+        >
+          Test description
+        </p>
+      </div>
+      <select
+        className="form__select"
+        onChange={[MockFunction]}
+        value="test1"
+      >
+        <option
+          key="test1"
+          value="test1"
+        >
+          test1
+        </option>
+        <option
+          key="test2"
+          value="test2"
+        >
+          test2
+        </option>
+        <option
+          key="test3"
+          value="test3"
+        >
+          test3
+        </option>
+      </select>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`submit options renders button correctly 1`] = `
+<form
+  className="form"
+  onSubmit={[MockFunction]}
+>
+  <div
+    className="form__section"
+    key="Test header"
+  >
+    <h2
+      className="form__section-header"
+    >
+      Test header
+    </h2>
+    <div
+      className="form__section-body"
+      key="Test title"
+    >
+      <div
+        className="form__section-info"
+      >
+        <h3
+          className="form__input-title"
+        >
+          Test title
+        </h3>
+        <p
+          className="form__input-description"
+        >
+          Test description
+        </p>
+      </div>
+      <input
+        className="form__input"
+        onChange={[MockFunction]}
+        placeholder="Test title"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="form__button-container"
+  >
+    <button
+      className="form__button"
+      id="test-button-id"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+`;
+
+exports[`text input renders text input correctly 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <div
+    className="form__section"
+    key="Test header"
+  >
+    <h2
+      className="form__section-header"
+    >
+      Test header
+    </h2>
+    <div
+      className="form__section-body"
+      key="Test title"
+    >
+      <div
+        className="form__section-info"
+      >
+        <h3
+          className="form__input-title"
+        >
+          Test title
+        </h3>
+        <p
+          className="form__input-description"
+        >
+          Test description
+        </p>
+      </div>
+      <input
+        className="form__input"
+        onChange={[MockFunction]}
+        placeholder="Test title"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</form>
+`;

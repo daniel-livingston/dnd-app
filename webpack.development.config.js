@@ -26,6 +26,6 @@ module.exports = () => {
 				},
 			],
 		},
-		devtool: "eval-cheap-module-source-map",
+		devtool: "inline-source-map",
 	};
 };

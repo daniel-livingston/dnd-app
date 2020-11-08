@@ -23,11 +23,18 @@ describe("<View>", () => {
 	test("renders log in link by default", () => {
 		const wrapper = mount(wrappedView);
 		expect(wrapper.find(Link).prop("to")).toBe("/login");
+		expect(wrapper.find(Link).text()).toEqual("Log in");
 	});
 
 	test("renders link to home when logged in", () => {
 		store.dispatch(setUser({ username: "testName" }));
 		const wrapper = mount(wrappedView);
 		expect(wrapper.find(Link).prop("to")).toBe("/");
+		expect(wrapper.find(Link).text()).toEqual("testName");
+	});
+
+	test("renders title to document.title", () => {
+		const wrapper = mount(wrappedView);
+		expect(document.title).toEqual(`DnD App | Test`);
 	});
 });
