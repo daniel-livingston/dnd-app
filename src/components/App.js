@@ -7,7 +7,7 @@ import Sidebar from "./Sidebar";
 // const HomePage = React.lazy(() => import("./HomePage"));
 // const LoginPage = React.lazy(() => import("./LoginPage"));
 // const CanvasPage = React.lazy(() => import("./CanvasPage"));
-// const DiceRollerPage = React.lazy(() => import("./DiceRollerPage"));
+const DiceView = React.lazy(() => import("./DiceView"));
 const SettingsView = React.lazy(() => import("./SettingsView"));
 // const SignupPage = React.lazy(() => import("./SignupPage"));
 import { setHistory, addToHistory } from "../actions/dice";
@@ -29,7 +29,7 @@ export class App extends React.Component {
 								<h1>Canvas</h1>
 							</Route>
 							<Route path='/dice' exact>
-								<h1>Dice</h1>
+								<DiceView />
 							</Route>
 							<Route path='/login' exact>
 								<h1>Login</h1>

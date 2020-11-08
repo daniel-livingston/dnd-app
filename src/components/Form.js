@@ -28,7 +28,9 @@ const propTypes = {
 					),
 
 					// Required if type is select
-					options: PropTypes.arrayOf(PropTypes.string.isRequired),
+					options: PropTypes.arrayOf(
+						PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+					),
 					// Required if type is link
 					to: PropTypes.string,
 				})

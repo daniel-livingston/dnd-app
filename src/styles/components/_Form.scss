@@ -1,3 +1,7 @@
+.form {
+	width: 100%;
+}
+
 .form__section-header {
 	font-size: $header-l;
 	padding: $spacing-s 0;
@@ -30,6 +34,23 @@
 
 .form__select,
 .form__input,
+.form__link,
+.form__button {
+	font-family: $header-font-family;
+	font-size: $header-m;
+	padding: $spacing-s;
+	border-radius: 0.5rem;
+	text-decoration: none;
+}
+
+.form__select,
+.form__link,
+.form__button {
+	cursor: pointer;
+}
+
+.form__select,
+.form__input,
 .form__link {
 	flex-grow: 0.25;
 	width: 25%;
@@ -39,10 +60,6 @@
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-}
-
-.form {
-	width: 100%;
 }
 
 @media (min-width: 768px) {

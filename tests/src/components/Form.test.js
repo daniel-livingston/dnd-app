@@ -4,6 +4,10 @@ import { Link, MemoryRouter } from "react-router-dom";
 import Form from "../../../src/components/Form";
 import { generateItem, generateForm } from "../../fixtures/Form";
 
+// Possible other things to test:
+// 1. Displaying headers and titles correctly
+// 2. Changing class to reflect being a card or not
+
 describe("submit options", () => {
 	const textInput = generateItem({ type: "text", onChange: jest.fn() });
 	const textInputForm = generateForm({
