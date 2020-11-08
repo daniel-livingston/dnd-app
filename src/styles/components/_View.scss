@@ -24,17 +24,21 @@
 
 .content__header__description {
 	display: none;
-	font-size: $text-m;
 }
 
 .content__body {
 	padding: $spacing-m;
 	flex-grow: 1;
-	max-height: 100%;
+	max-height: calc(100vh - 2 * $spacing-m - $header-xl);
 }
 
 @media (min-width: $tablet-width) {
 	.content__header__description {
 		display: block;
+		font-size: $text-m;
+	}
+
+	.content__body {
+		max-height: calc(100vh - 2 * $spacing-m - $header-xl -$text-m);
 	}
 }

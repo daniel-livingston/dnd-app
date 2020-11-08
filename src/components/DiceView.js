@@ -1,5 +1,6 @@
 import React from "react";
 import DiceForm from "./DiceForm";
+import DiceHistory from "./DiceHistory";
 import View from "./View";
 
 const DiceView = () => (
@@ -9,6 +10,7 @@ const DiceView = () => (
 	>
 		<div className='dice-container'>
 			<DiceForm />
+			<DiceHistory />
 		</div>
 	</View>
 );

@@ -1,4 +1,30 @@
 .dice-container {
+	height: 100%;
+	width: 100%;
+}
+
+.dice-history {
+	height: calc(100vh - 382px);
 	overflow: auto;
-	max-height: 100%;
+}
+
+.dice-history__item {
+	margin: $spacing-m 0;
+}
+
+.dice-history__item__overview {
+	font-weight: bold;
+	font-size: $text-m;
+}
+
+.dice-history__item__details {
+	font-size: $text-m;
+}
+
+@media (min-width: 768px) {
+	.dice-container {
+		width: 576px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
