@@ -4,13 +4,14 @@
 	"description": "An app for managing DnD sessions with your friends.",
 	"main": "index.js",
 	"scripts": {
-		"build": "webpack --config=webpack.production.config.js --progress",
-		"build:dev": "webpack --config=webpack.development.config.js --watch --progress",
-		"dev": "concurrently \"npm run build:dev\" \"npm run start:dev\"",
-		"mongo:dev": "/Users/Daniel/mongodb/bin/mongod --dbpath=/Users/Daniel/mongodb-data",
+		"build": "webpack --config=webpack.production.config.js",
+		"dev": "concurrently \"npm run mongo\" \"npm run dev:build\" \"npm run dev:start\"",
+		"dev:build": "webpack --config=webpack.development.config.js --watch --progress",
+		"dev:start": "env-cmd -f ./config/dev.env nodemon server/index",
+		"mongo": "/Users/Daniel/mongodb/bin/mongod --dbpath=/Users/Daniel/mongodb-data",
 		"start": "node server/index",
-		"start:dev": "env-cmd -f ./config/dev.env nodemon server/index",
-		"test": "env-cmd -f ./config/test.env jest --config=jest.config.json --runInBand --detectOpenHandles"
+		"test": "env-cmd -f ./config/test.env jest --config=jest.config.json --runInBand --detectOpenHandles",
+		"test:watch": "npm run test -- --watch"
 	},
 	"author": "Daniel Livingston",
 	"license": "ISC",

@@ -7,9 +7,12 @@ const morgan = require("morgan");
 const passport = require("passport");
 const session = require("express-session");
 require("./db/mongodb");
+const { initializeSocket } = require("./socket");
 
 const app = express();
 const httpServer = http.createServer(app);
+
+initializeSocket(httpServer);
 
 // Middleware
 app.use(morgan("dev"));
