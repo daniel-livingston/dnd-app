@@ -131,6 +131,7 @@ describe("Room", () => {
 		const u = room.addUser(user);
 		expect(u).toEqual(user);
 		expect(room.size()).toEqual(1);
+		expect(user.currentRoom).toEqual(room);
 	});
 
 	test("addUser fails on invalid user", () => {
@@ -197,9 +198,13 @@ describe("Room", () => {
 		expect(room.size()).toBe(1);
 		expect(room.containsUser(user)).toBe(true);
 		expect(room.containsUser(u)).toBe(false);
+		expect(user.currentRoom).toEqual(room);
+
 		room.removeUser(u);
 		expect(room.size()).toBe(1);
+
 		room.removeUser(user);
+		expect(user.currentRoom).toBeUndefined();
 		expect(room.containsUser(user)).toBe(false);
 		expect(room.size()).toBe(0);
 		expect(() => room.removeUser({ id: uuid() })).toThrowError(InvalidUserError);

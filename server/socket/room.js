@@ -115,6 +115,7 @@ class Room {
 		}
 
 		this._users.push(user);
+		user.setRoom(this);
 		return user;
 	}
 	containsUser(user) {
@@ -148,6 +149,7 @@ class Room {
 		}
 
 		this._users = this._users.filter((u) => !u.equals(user));
+		user.setRoom(undefined);
 		return user;
 	}
 	size() {
@@ -165,6 +167,12 @@ class User {
 	}
 	get username() {
 		return this._username;
+	}
+	get currentRoom() {
+		return this._room;
+	}
+	setRoom(room) {
+		this._room = room;
 	}
 	equals(user) {
 		return User.isValidUser(user) && this._id === user.id;
