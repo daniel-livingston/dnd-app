@@ -1,5 +1,14 @@
 const { validate, v4: uuid } = require("uuid");
 const { RoomMap, Room, User } = require("../../../server/socket/room");
+const {
+	AuthError,
+	InvalidRoomError,
+	InvalidRoomIdError,
+	InvalidRoomNameError,
+	InvalidUserError,
+	InvalidUserIdError,
+	NoSuchRoomError,
+} = require("../../../server/socket/errors");
 
 let room, rooms, user;
 beforeEach(() => {
@@ -20,8 +29,8 @@ describe("RoomMap", () => {
 		rooms.addUserToRoom(room, user);
 		expect(room.containsUser(user)).toBe(true);
 
-		expect(() => rooms.addUserToRoom(room, { id: uuid() })).toThrow();
-		expect(() => rooms.addUserToRoom(new Room("ABCDEF"), user)).toThrow();
+		expect(() => rooms.addUserToRoom(room, { id: uuid() })).toThrowError(InvalidUserError);
+		expect(() => rooms.addUserToRoom(new Room("ABCDEF"), user)).toThrowError(NoSuchRoomError);
 	});
 
 	test("containsRoom", () => {
@@ -53,9 +62,10 @@ describe("RoomMap", () => {
 		const notDeleted = rooms.deleteRoomByName("ABCDEF");
 		expect(notDeleted).toBeUndefined();
 		expect(rooms.size()).toBe(0);
+		expect(() => rooms.deleteRoomByName("Not valid")).toThrowError(InvalidRoomNameError);
 	});
 
-	test("findRoomByName", () => {
+	test("findRoomById", () => {
 		const r = new Room("Test");
 		rooms._rooms.push(r);
 		const id = r.id;
@@ -63,20 +73,43 @@ describe("RoomMap", () => {
 		expect(found).toEqual(r);
 		const notFound = rooms.findRoomById(uuid());
 		expect(notFound).toBeUndefined();
+		expect(() => rooms.findRoomById("ABCDEF")).toThrowError(InvalidRoomIdError);
 	});
 
 	test("findRoomByName", () => {
-		const r = new Room("Test");
+		const r = new Room("ABCDEF");
 		rooms._rooms.push(r);
-		const found = rooms.findRoomByName("Test");
+		const found = rooms.findRoomByName("ABCDEF");
 		expect(found).toEqual(r);
-		const notFound = rooms.findRoomByName("Not found");
+		const notFound = rooms.findRoomByName("FEDCBA");
 		expect(notFound).toBeUndefined();
+		expect(() => rooms.findRoomByName("Not valid")).toThrowError(InvalidRoomNameError);
 	});
 
 	test("generateUniqueRoomName", () => {
 		const name = rooms.generateUniqueRoomName();
 		expect(Room.isValidName(name)).toBe(true);
+	});
+
+	test("removeUserFromRoom", () => {
+		const room = rooms.createRoom();
+
+		expect(() => rooms.removeUserFromRoom({}, user)).toThrowError(InvalidRoomError);
+		expect(() => rooms.removeUserFromRoom(room, { id: uuid() })).toThrowError(InvalidUserError);
+		expect(() => rooms.removeUserFromRoom(room, user)).toThrowError(AuthError);
+
+		rooms.addUserToRoom(room, user);
+		const userTwo = new User();
+		rooms.addUserToRoom(room, userTwo);
+		expect(room.size()).toBe(2);
+		expect(rooms.containsRoom(room)).toBe(true);
+
+		rooms.removeUserFromRoom(room, userTwo);
+		expect(room.size()).toBe(1);
+		expect(rooms.containsRoom(room)).toBe(true);
+
+		rooms.removeUserFromRoom(room, user);
+		expect(rooms.containsRoom(room)).toBe(false);
 	});
 
 	test("size", () => {
@@ -111,19 +144,6 @@ describe("Room", () => {
 		expect(room.containsUser(u)).toBe(false);
 	});
 
-	test("deleteUser", () => {
-		const u = new User();
-		room.addUser(user);
-		expect(room.size()).toBe(1);
-		expect(room.containsUser(user)).toBe(true);
-		expect(room.containsUser(u)).toBe(false);
-		room.deleteUser(u);
-		expect(room.size()).toBe(1);
-		room.deleteUser(user);
-		expect(room.containsUser(user)).toBe(false);
-		expect(room.size()).toBe(0);
-	});
-
 	test("equals", () => {
 		const room1 = new Room("ABCDEF");
 		const room2 = new Room("FEDCBA");
@@ -141,12 +161,18 @@ describe("Room", () => {
 		expect(foundUser).toEqual(user);
 		const notFoundUser = room.findUserById(u.id);
 		expect(notFoundUser).toBeUndefined();
+		expect(() => room.findUserById("Invalid user id")).toThrowError(InvalidUserIdError);
 	});
 
 	test("isEmpty", () => {
 		expect(room.isEmpty()).toBe(true);
 		room._users.push(new User());
 		expect(room.isEmpty()).toBe(false);
+	});
+
+	test("isValidId", () => {
+		expect(Room.isValidId(uuid())).toBe(true);
+		expect(Room.isValidId("ABCDEF")).toBe(false);
 	});
 
 	test("isValidName", () => {
@@ -163,6 +189,20 @@ describe("Room", () => {
 		expect(Room.isValidRoom(room)).toBe(true);
 		expect(Room.isValidRoom(new Room())).toBe(false);
 		expect(Room.isValidRoom({ _id: uuid(), name: "ABCDEF" })).toBe(false);
+	});
+
+	test("removeUser", () => {
+		const u = new User();
+		room.addUser(user);
+		expect(room.size()).toBe(1);
+		expect(room.containsUser(user)).toBe(true);
+		expect(room.containsUser(u)).toBe(false);
+		room.removeUser(u);
+		expect(room.size()).toBe(1);
+		room.removeUser(user);
+		expect(room.containsUser(user)).toBe(false);
+		expect(room.size()).toBe(0);
+		expect(() => room.removeUser({ id: uuid() })).toThrowError(InvalidUserError);
 	});
 
 	test("size", () => {
@@ -194,6 +234,11 @@ describe("User", () => {
 		expect(user.equals(user)).toBe(true);
 		expect(user.equals(validUser)).toBe(false);
 		expect(user.equals(invalidUser)).toBe(false);
+	});
+
+	test("isValidId", () => {
+		expect(User.isValidId(uuid())).toBe(true);
+		expect(User.isValidId("ABCDEF")).toBe(false);
 	});
 
 	test("isValidUser", () => {
