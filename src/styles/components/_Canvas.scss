@@ -10,16 +10,9 @@
 	height: $toolbar-height-s;
 }
 
-.canvas-toolbar__button {
+.canvas-button {
 	height: 100%;
-	border: none !important;
-	outline: none;
-	padding: $spacing-s;
-}
-
-.canvas-toolbar__icon {
-	width: auto;
-	height: 100%;
+	padding: $spacing-s !important;
 }
 
 .canvas-toolbar__hidden {

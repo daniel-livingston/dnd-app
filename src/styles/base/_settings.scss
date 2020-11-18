@@ -4,22 +4,19 @@
  *
  *******************************************/
 
-// Font families
-$Montserrat: "Montserrat", Arial, sans-serif;
-$Staatliches: "Staatliches", Arial, sans-serif;
-
-$header-font-family: $Staatliches;
-$text-font-family: $Montserrat;
+$header-font-family: sans-serif;
+$text-font-family: sans-serif;
 
 // Font sizing
 $header-xs: 1rem;
 $header-s: 1.4rem;
 $header-m: 1.8rem;
 $header-l: 2.4rem;
-$header-xl: 3.2rem;
+$header-xl: 3.6rem;
 
 $text-s: 1.2rem;
 $text-m: 1.4rem;
+$text-l: 1.6rem;
 
 /*******************************************
  *
@@ -46,19 +43,29 @@ $spacing-m: 1.5rem;
 $spacing-l: 2rem;
 $spacing-xl: 2.5rem;
 
+$view-width: 768px;
+
 /*******************************************
  *
  * Themes
  *
  *******************************************/
-$dark-theme-text: #eee;
-$dark-theme-bg: #222;
-$dark-theme-header: #111;
-$dark-theme-accent: rgb(0, 195, 255);
-
-$light-theme-text: #111;
-$light-theme-bg: #eee;
-$light-theme-header: #2bcfcc;
-$light-theme-accent: rgb(0, 81, 255);
+// Themes
+$theme-colors: (
+	"dark": (
+		"accent": rgb(0, 195, 255),
+		"bg": #222,
+		"bg-header": #111,
+		"header": #eee,
+		"text": #eee,
+	),
+	"light": (
+		"accent": rgb(255, 139, 121),
+		"bg": #eee,
+		"bg-header": rgb(102, 183, 207),
+		"header": rgb(102, 183, 207),
+		"text": #111,
+	),
+);
 
 $error-text: #ff0000;

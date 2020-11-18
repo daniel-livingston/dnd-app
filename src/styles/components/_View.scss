@@ -7,9 +7,6 @@
 
 .content__header {
 	padding: $spacing-m;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
 }
 
 .link {
@@ -19,7 +16,6 @@
 
 .content__header__title {
 	font-family: $header-font-family;
-	font-size: $header-xl;
 }
 
 .content__header__description {
@@ -35,6 +31,5 @@
 @media (min-width: $tablet-width) {
 	.content__header__description {
 		display: block;
-		font-size: $text-m;
 	}
 }

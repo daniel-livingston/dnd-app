@@ -46,29 +46,29 @@ const propTypes = {
 };
 
 const Form = (props) => (
-	<form className={props.isCard ? "card form" : "form"} onSubmit={props.submit.onSubmit}>
+	<form className={props.isCard ? "card form" : "fixed-width"} onSubmit={props.submit.onSubmit}>
 		{/* sections array is required */}
 		{props.sections.map((section) => (
 			<div key={section.header} className='form__section'>
 				{/* Section Header is required */}
-				<h2 className='form__section-header'>{section.header}</h2>
+				<h2 className='form__section-header text-l border-bottom text-header'>
+					{section.header}
+				</h2>
 
 				{/* items array in sections is required */}
 				{section.items.map((item) => (
 					<div key={item.title} className='form__section-body'>
 						<div className='form__section-info'>
 							{/* Each item must have a title */}
-							<h3 className='form__input-title'>{item.title}</h3>
+							<h3 className='text-m'>{item.title}</h3>
 							{/* Each item may have a description */}
-							{item.description && (
-								<p className='form__input-description'>{item.description}</p>
-							)}
+							{item.description && <p className='text-s'>{item.description}</p>}
 							{/* Each item may have a list of potential error handlers */}
 							{item.errors &&
 								item.errors
 									.filter((error) => error.isShowing)
 									.map((error) => (
-										<div key={error.message} className='form__error'>
+										<div key={error.message} className='form__error text-s'>
 											{error.message}
 										</div>
 									))}
@@ -76,7 +76,7 @@ const Form = (props) => (
 
 						{/* Possible item types */}
 						{item.type === "link" && (
-							<Link className='form__link' to={item.to}>
+							<Link className='form__link button text-m' to={item.to}>
 								{item.value}
 							</Link>
 						)}
@@ -84,7 +84,7 @@ const Form = (props) => (
 						{item.type === "number" && (
 							<input
 								type='number'
-								className='form__input'
+								className='form__input text-m'
 								value={item.value}
 								onChange={item.onChange}
 							/>
@@ -92,7 +92,7 @@ const Form = (props) => (
 
 						{item.type === "select" && (
 							<select
-								className='form__select'
+								className='form__select text-m'
 								value={item.value}
 								onChange={item.onChange}
 							>
@@ -107,7 +107,7 @@ const Form = (props) => (
 						{item.type === "text" && (
 							<input
 								type='text'
-								className='form__input'
+								className='form__input text-m'
 								value={item.value}
 								onChange={item.onChange}
 								placeholder={item.title}
@@ -117,7 +117,7 @@ const Form = (props) => (
 						{item.type === "password" && (
 							<input
 								type='password'
-								className='form__input'
+								className='form__input text-m'
 								value={item.value}
 								onChange={item.onChange}
 								placeholder={item.title}

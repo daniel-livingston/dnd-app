@@ -1,9 +1,4 @@
-.form {
-	width: 100%;
-}
-
 .form__section-header {
-	font-size: $header-l;
 	padding: $spacing-s 0;
 }
 
@@ -19,16 +14,7 @@
 	width: 75%;
 }
 
-.form__input-title {
-	font-size: $header-m;
-}
-
-.form__input-description {
-	font-size: $text-s;
-}
-
 .form__error {
-	font-size: $text-s;
 	color: $error-text;
 }
 
@@ -37,7 +23,6 @@
 .form__link,
 .form__button {
 	font-family: $header-font-family;
-	font-size: $header-m;
 	padding: $spacing-s;
 	border-radius: 0.5rem;
 	text-decoration: none;
@@ -62,23 +47,8 @@
 	align-items: center;
 }
 
-@media (min-width: 768px) {
-	.form {
-		width: 576px;
-		margin: 0 auto;
-	}
-}
-
 .form__button-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
-}
-
-.card {
-	padding: $spacing-s;
-	margin-top: $spacing-s;
-	margin-bottom: $spacing-s;
-	border-radius: 0.5rem;
-	box-shadow: 0 0 5px #333;
 }

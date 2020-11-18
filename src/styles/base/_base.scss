@@ -1,3 +1,6 @@
+@use "sass:map";
+
+// General
 * {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -32,3 +35,130 @@ h6,
 button {
 	font-family: $header-font-family;
 }
+
+// Text decoration
+.bold {
+	font-weight: bold;
+}
+
+.italic {
+	font-style: italic;
+}
+
+// Sizing
+@mixin size-font($font-type, $size, $value) {
+	.#{$font-type}-#{$size} {
+		font-size: $value;
+	}
+}
+@include size-font("text", "xs", 1rem);
+@include size-font("text", "s", 1.4rem);
+@include size-font("text", "m", 1.8rem);
+@include size-font("text", "l", 2.4rem);
+@include size-font("text", "xl", 3.6rem);
+
+@mixin responsive-size-icon($dimension) {
+	.icon-#{$dimension} {
+		@if $dimension == "w" {
+			width: 100%;
+			height: auto;
+		} @else {
+			width: auto;
+			height: 100%;
+		}
+	}
+}
+@include responsive-size-icon("w");
+@include responsive-size-icon("h");
+
+.card {
+	border-radius: 0.5rem;
+	box-shadow: 0 0 5px #333;
+}
+
+.fixed-width {
+	width: min(100%, 768px);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Flex options
+@mixin flex-type($flex-direction, $justify-type) {
+	.#{$flex-direction}-#{$justify-type} {
+		display: flex;
+		flex-direction: $flex-direction;
+		justify-content: $justify-type;
+	}
+}
+@include flex-type(row, space-between);
+@include flex-type(column, center);
+
+@mixin theme($theme-name) {
+	.theme__#{$theme-name} {
+		background-color: map-get($theme-colors, $theme-name, "bg");
+		color: map-get($theme-colors, $theme-name, "text");
+
+		.bg-secondary {
+			background-color: map-get($theme-colors, $theme-name, "bg-header");
+		}
+
+		.text-primary {
+			color: map-get($theme-colors, $theme-name, "text");
+		}
+
+		.text-header {
+			color: map-get($theme-colors, $theme-name, "header");
+		}
+
+		input,
+		select,
+		button,
+		.button {
+			background-color: map-get($theme-colors, $theme-name, "bg-header");
+			color: map-get($theme-colors, $theme-name, "text");
+			border: 1px solid lighten(map-get($theme-colors, $theme-name, "bg-header"), 10%);
+		}
+
+		.link {
+			color: map-get($theme-colors, $theme-name, "accent");
+		}
+
+		.sidebar-button {
+			@extend .button;
+			border: none;
+		}
+
+		.canvas-button {
+			@extend .sidebar-button;
+		}
+
+		svg {
+			fill: map-get($theme-colors, $theme-name, "text");
+		}
+
+		button:hover,
+		.button:hover {
+			background-color: lighten(map-get($theme-colors, $theme-name, "bg-header"), 10%);
+		}
+
+		.border-bottom {
+			border-bottom: 1px solid lighten(map-get($theme-colors, $theme-name, "bg-header"), 10%);
+		}
+
+		.border {
+			border: 1px solid lighten(map-get($theme-colors, $theme-name, "bg-header"), 10%);
+		}
+
+		.accent {
+			color: map-get($theme-colors, $theme-name, "accent");
+		}
+
+		.card {
+			background-color: map-get($theme-colors, $theme-name, "bg-header");
+			color: map-get($theme-colors, $theme-name, "text");
+			border: 1px solid lighten(map-get($theme-colors, $theme-name, "bg-header"), 10%);
+		}
+	}
+}
+@include theme("dark");
+@include theme("light");

@@ -1,14 +1,11 @@
 // Settings designed for mobile first
 .sidebar {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	padding: 0 $spacing-xs;
 	max-width: $sidebar-width-s;
 }
 
-.sidebar__link {
+.sidebar-button {
 	text-decoration: none;
+	padding: $spacing-m $spacing-s;
 }
 
 .sidebar__item {
@@ -16,19 +13,12 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: $spacing-s 0;
-	padding: $spacing-xs;
-}
-
-.sidebar__icon {
-	height: auto;
-	width: 100%;
 }
 
 .sidebar__item__title {
 	font-family: $header-font-family;
-	font-size: $header-s;
 	text-align: center;
+	font-size: $text-s;
 }
 
 // Tablet size or above
@@ -37,11 +27,7 @@
 		max-width: $sidebar-width-l;
 	}
 
-	.sidebar__icon {
-		height: $icon-l;
-	}
-
 	.sidebar__item__title {
-		font-size: $header-m;
+		font-size: $text-m;
 	}
 }

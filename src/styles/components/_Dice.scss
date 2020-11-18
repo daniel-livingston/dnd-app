@@ -21,15 +21,6 @@
 	margin: $spacing-m 0 0 0;
 }
 
-.dice-history__item__overview {
-	font-weight: bold;
-	font-size: $text-m;
-}
-
-.dice-history__item__details {
-	font-size: $text-m;
-}
-
 @media (min-width: 768px) {
 	.dice-container {
 		width: 576px;

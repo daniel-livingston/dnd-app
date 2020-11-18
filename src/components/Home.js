@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Form from "./Form";
+import RoomInfo from "./RoomInfo";
 
 export const Home = (props) => {
 	const signInForm = {
@@ -25,7 +26,6 @@ export const Home = (props) => {
 				],
 			},
 		],
-		isCard: true,
 	};
 
 	const joinRoomForm = {
@@ -50,19 +50,19 @@ export const Home = (props) => {
 				],
 			},
 		],
-		isCard: true,
 	};
 	return (
 		<div className='home-container'>
 			<div className='home'>
 				{props.isLoggedIn ? null : <Form {...signInForm} />}
-				<Form {...joinRoomForm} />
+				{props.inRoom ? <RoomInfo /> : <Form {...joinRoomForm} />}
 			</div>
 		</div>
 	);
 };
 
 const mapStateToProps = (state) => ({
+	inRoom: state.room.inRoom,
 	isLoggedIn: state.user.isLoggedIn,
 	username: state.user.username,
 });

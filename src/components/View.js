@@ -14,10 +14,10 @@ export const View = (props) => {
 
 	return (
 		<div className='content'>
-			<div className='content__header'>
+			<div className='content__header row-space-between bg-secondary'>
 				<div className='content__header__info'>
-					<h1 className='content__header__title'>{props.title}</h1>
-					<p className='content__header__description'>{props.description}</p>
+					<h1 className='content__header__title text-xl'>{props.title}</h1>
+					<p className='content__header__description text-s'>{props.description}</p>
 				</div>
 				{props.isLoggedIn ? (
 					<Link className='link' to='/'>

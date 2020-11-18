@@ -227,16 +227,16 @@ export class Canvas extends React.Component {
 		// return <canvas id='canvas'>Your browser does not support the HTML 5 canvas.</canvas>;
 		return (
 			<div className='canvas-wrapper'>
-				<div className='canvas-toolbar'>
+				<div className='canvas-toolbar bg-secondary'>
 					{this.props.isDrawing ? (
 						<button
 							title='Select objects'
-							className='canvas-toolbar__button'
+							className='canvas-button'
 							onClick={this.onClickSelectObjects}
 						>
 							<svg
 								viewBox='0 0 16 16'
-								className='canvas-toolbar__icon'
+								className='icon-h'
 								xmlns='http://www.w3.org/2000/svg'
 							>
 								<path
@@ -248,11 +248,11 @@ export class Canvas extends React.Component {
 					) : (
 						<button
 							title='Use brush'
-							className='canvas-toolbar__button'
+							className='canvas-button'
 							onClick={this.onClickUseBrush}
 						>
 							<svg
-								className='canvas-toolbar__icon'
+								className='icon-h'
 								viewBox='0 0 16 16'
 								xmlns='http://www.w3.org/2000/svg'
 							>
@@ -266,12 +266,12 @@ export class Canvas extends React.Component {
 					<button
 						id='color-button'
 						title='Show brush colors'
-						className='canvas-toolbar__button'
+						className='canvas-button'
 						onClick={this.onClickBrushColor}
 					>
 						<svg
 							viewBox='0 0 16 16'
-							className='canvas-toolbar__icon'
+							className='icon-h'
 							xmlns='http://www.w3.org/2000/svg'
 						>
 							<path
@@ -292,12 +292,12 @@ export class Canvas extends React.Component {
 					<button
 						id='line-width-button'
 						title='Show brush width options'
-						className='canvas-toolbar__button'
+						className='canvas-button'
 						onClick={this.onClickLineWidth}
 					>
 						<svg
 							viewBox='0 0 16 16'
-							className='canvas-toolbar__icon'
+							className='icon-h'
 							xmlns='http://www.w3.org/2000/svg'
 						>
 							<path d='M0 3.5A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-2zm0 5A.5.5 0 0 1 .5 8h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zm0 4a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z' />
@@ -322,12 +322,12 @@ export class Canvas extends React.Component {
 					/>
 					<button
 						title='Upload image'
-						className='canvas-toolbar__button'
+						className='canvas-button'
 						onClick={this.onClickUpload}
 					>
 						<svg
 							viewBox='0 0 16 16'
-							className='canvas-toolbar__icon'
+							className='icon-h'
 							xmlns='http://www.w3.org/2000/svg'
 						>
 							<path
@@ -340,14 +340,10 @@ export class Canvas extends React.Component {
 							/>
 						</svg>
 					</button>
-					<button
-						title='Undo'
-						className='canvas-toolbar__button'
-						onClick={this.onClickUndo}
-					>
+					<button title='Undo' className='canvas-button' onClick={this.onClickUndo}>
 						<svg
 							viewBox='0 0 16 16'
-							className='canvas-toolbar__icon'
+							className='icon-h'
 							xmlns='http://www.w3.org/2000/svg'
 						>
 							<path
@@ -357,14 +353,10 @@ export class Canvas extends React.Component {
 							<path d='M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z' />
 						</svg>
 					</button>
-					<button
-						title='Redo'
-						className='canvas-toolbar__button'
-						onClick={this.onClickRedo}
-					>
+					<button title='Redo' className='canvas-button' onClick={this.onClickRedo}>
 						<svg
 							viewBox='0 0 16 16'
-							className='canvas-toolbar__icon'
+							className='icon-h'
 							xmlns='http://www.w3.org/2000/svg'
 						>
 							<path
@@ -374,14 +366,10 @@ export class Canvas extends React.Component {
 							<path d='M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z' />
 						</svg>
 					</button>
-					<button
-						title='Clear'
-						className='canvas-toolbar__button'
-						onClick={this.onClickClear}
-					>
+					<button title='Clear' className='canvas-button' onClick={this.onClickClear}>
 						<svg
 							viewBox='0 0 16 16'
-							className='canvas-toolbar__icon'
+							className='icon-h'
 							xmlns='http://www.w3.org/2000/svg'
 						>
 							<path

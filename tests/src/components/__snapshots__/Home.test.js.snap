@@ -8,7 +8,6 @@ exports[`<Home> renders correctly 1`] = `
     className="home"
   >
     <Form
-      isCard={true}
       sections={
         Array [
           Object {
@@ -39,7 +38,6 @@ exports[`<Home> renders correctly 1`] = `
       }
     />
     <Form
-      isCard={true}
       sections={
         Array [
           Object {
