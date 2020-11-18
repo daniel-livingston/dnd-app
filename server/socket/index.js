@@ -1,6 +1,6 @@
 const socketio = require("socket.io");
 const { RoomMap, User } = require("./room");
-const { createRoom, joinRoom, leaveRoom, updateUserList } = require("./events");
+const { createRoom, joinRoom, leaveRoom, sendUserList } = require("./events");
 
 const initializeSocket = (server) => {
 	const rooms = new RoomMap();
@@ -30,7 +30,7 @@ const initializeSocket = (server) => {
 				room = createRoom(io, socket, rooms, user);
 				callback({
 					message: "Room created",
-					room: { name: room.name, users: room.users },
+					room: { name: room.name, users: room.users, canvas: room.canvas },
 				});
 			} catch (e) {
 				callback(undefined, e);
@@ -44,8 +44,11 @@ const initializeSocket = (server) => {
 					leaveRoom(io, socket, rooms, user, room);
 				}
 				room = joinRoom(io, socket, rooms, user, name);
-				updateUserList(io, socket, room);
-				callback({ message: "Room joined", room: { name: room.name, users: room.users } });
+				sendUserList(io, socket, room);
+				callback({
+					message: "Room joined",
+					room: { name: room.name, users: room.users, canvas: room.canvas },
+				});
 			} catch (e) {
 				callback(undefined, e);
 			}
@@ -54,7 +57,7 @@ const initializeSocket = (server) => {
 		socket.on("leave room", (callback) => {
 			try {
 				leaveRoom(io, socket, rooms, user, room);
-				updateUserList(io, socket, room);
+				sendUserList(io, socket, room);
 				callback({ message: "Room left" });
 			} catch (e) {
 				callback(undefined, e);

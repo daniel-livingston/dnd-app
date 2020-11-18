@@ -100,6 +100,9 @@ class Room {
 		this._name = name;
 		this._id = uuid();
 	}
+	get canvas() {
+		return this._canvas;
+	}
 	get id() {
 		return this._id;
 	}
@@ -151,6 +154,9 @@ class Room {
 		this._users = this._users.filter((u) => !u.equals(user));
 		user.setRoom(undefined);
 		return user;
+	}
+	setCanvas(canvas) {
+		this._canvas = canvas;
 	}
 	size() {
 		return this._users.length;
