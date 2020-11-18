@@ -107,7 +107,7 @@ class Room {
 		return this._name;
 	}
 	get users() {
-		return this._users.slice(0);
+		return this._users.map((user) => user.username);
 	}
 	addUser(user) {
 		if (!User.isValidUser(user)) {

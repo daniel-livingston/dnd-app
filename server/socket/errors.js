@@ -1,8 +1,3 @@
-const InternalServerError = {
-	error: "InternalServerError",
-	message: "The server failed to fulfill the request",
-};
-
 class AuthError extends Error {
 	constructor(message) {
 		super(message);
@@ -53,7 +48,6 @@ class NoSuchRoomError extends Error {
 }
 
 module.exports = {
-	InternalServerError,
 	AuthError,
 	InvalidRoomError,
 	InvalidRoomNameError,

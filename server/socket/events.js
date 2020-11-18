@@ -18,8 +18,14 @@ const leaveRoom = (io, socket, rooms, user, room) => {
 	rooms.removeUserFromRoom(room, user);
 };
 
+const updateUserList = (io, socket, room) => {
+	const name = room.name;
+	socket.to(name).emit("update user list", room.users);
+};
+
 module.exports = {
 	createRoom,
 	joinRoom,
 	leaveRoom,
+	updateUserList,
 };

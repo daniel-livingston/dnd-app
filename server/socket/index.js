@@ -1,7 +1,6 @@
 const socketio = require("socket.io");
 const { RoomMap, User } = require("./room");
-const { createRoom, joinRoom, leaveRoom } = require("./events");
-const { InternalServerError } = require("./errors");
+const { createRoom, joinRoom, leaveRoom, updateUserList } = require("./events");
 
 const initializeSocket = (server) => {
 	const rooms = new RoomMap();
@@ -24,15 +23,15 @@ const initializeSocket = (server) => {
 		});
 
 		socket.on("create room", (callback) => {
-			console.log("Attempting to create a room");
 			try {
 				if (room) {
-					console.log("Thinks there's a room");
 					leaveRoom(io, socket, rooms, user, room);
 				}
-				console.log("Room?", room);
 				room = createRoom(io, socket, rooms, user);
-				callback({ message: "Room created", room: { name: room.name, users: room.users } });
+				callback({
+					message: "Room created",
+					room: { name: room.name, users: room.users },
+				});
 			} catch (e) {
 				callback(undefined, e);
 			}
@@ -45,17 +44,20 @@ const initializeSocket = (server) => {
 					leaveRoom(io, socket, rooms, user, room);
 				}
 				room = joinRoom(io, socket, rooms, user, name);
+				updateUserList(io, socket, room);
 				callback({ message: "Room joined", room: { name: room.name, users: room.users } });
 			} catch (e) {
 				callback(undefined, e);
 			}
 		});
 
-		socket.on("leave room", () => {
+		socket.on("leave room", (callback) => {
 			try {
 				leaveRoom(io, socket, rooms, user, room);
+				updateUserList(io, socket, room);
+				callback({ message: "Room left" });
 			} catch (e) {
-				socket.emit("leave room", e.name);
+				callback(undefined, e);
 			}
 		});
 	});

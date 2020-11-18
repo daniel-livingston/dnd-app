@@ -1,6 +1,10 @@
 const { Room, RoomMap, User } = require("../../../server/socket/room");
-const { createRoom, joinRoom } = require("../../../server/socket/events");
-const { InvalidRoomNameError, NoSuchRoomError } = require("../../../server/socket/errors");
+const { createRoom, joinRoom, leaveRoom } = require("../../../server/socket/events");
+const {
+	AuthError,
+	InvalidRoomNameError,
+	NoSuchRoomError,
+} = require("../../../server/socket/errors");
 
 let rooms, io, socket, roomOne, user, username;
 beforeEach(() => {
@@ -8,6 +12,7 @@ beforeEach(() => {
 	roomOne = rooms.createRoom();
 	socket = {
 		join: jest.fn(),
+		leave: jest.fn(),
 	};
 	username = "Test username";
 	user = new User({ username });
@@ -41,5 +46,25 @@ describe("join room event", () => {
 
 	test("fails to join nonexistent room", () => {
 		expect(() => joinRoom(io, socket, rooms, user, "ABCDEF")).toThrowError(NoSuchRoomError);
+	});
+});
+
+describe("leave room event", () => {
+	let room;
+	beforeEach(() => {
+		room = createRoom(io, socket, rooms, user);
+	});
+
+	test("leaves room successfully", () => {
+		expect(room.containsUser(user)).toBe(true);
+
+		leaveRoom(io, socket, rooms, user, room);
+		expect(room.containsUser(user)).toBe(false);
+		expect(socket.leave).toHaveBeenCalledWith(room.name);
+	});
+
+	test("throws error when leaving room while not already in one", () => {
+		const userTwo = new User({ username: "Not in room" });
+		expect(() => leaveRoom(io, socket, rooms, userTwo, room)).toThrowError(AuthError);
 	});
 });
