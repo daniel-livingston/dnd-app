@@ -23,9 +23,8 @@ export class DiceForm extends React.Component {
 		const value = parseInt(e.target.value, 10);
 		this.props.updateModifier(value);
 	};
-	onSubmit = (e) => {
-		e.preventDefault();
-		document.getElementById("roll-dice-button").setAttribute("disabled", "disabled");
+	onSubmit = () => {
+		document.getElementById("DiceForm-Button").setAttribute("disabled", "disabled");
 
 		const rolls = [];
 		let total = 0;
@@ -48,49 +47,49 @@ export class DiceForm extends React.Component {
 
 		this.props.rollDice(roll);
 		setTimeout(() => {
-			document.getElementById("roll-dice-button").removeAttribute("disabled");
+			document.getElementById("DiceForm-Button").removeAttribute("disabled");
 		}, 100);
 	};
 	render() {
-		const diceForm = {
-			sections: [
-				{
-					header: "Dice Roller",
-					items: [
-						{
-							title: "Number",
-							description: "Choose the number of dice to roll.",
-							type: "select",
-							value: this.props.number,
-							onChange: this.onNumberSelect,
-							options: DEFAULT_DICE_NUMBERS,
-						},
-						{
-							title: "Sides",
-							description: "Choose the number of sides for the dice.",
-							type: "select",
-							value: this.props.sides,
-							onChange: this.onSidesSelect,
-							options: DEFAULT_DICE_SIDES,
-						},
-						{
-							title: "Modifier",
-							description: "Choose the modifier to add onto the roll.",
-							type: "number",
-							value: this.props.modifier,
-							onChange: this.onModifierChange,
-						},
-					],
-				},
-			],
-			submit: {
-				buttonId: "roll-dice-button",
-				buttonName: "Roll dice",
-				onSubmit: this.onSubmit,
-			},
-		};
-
-		return <Form {...diceForm} />;
+		return (
+			<Form
+				className='DiceForm'
+				header='Dice Roller'
+				items={[
+					{
+						title: "Number",
+						description: "Choose the number of dice to roll.",
+						inputType: "select",
+						inputValue: this.props.number,
+						inputOnChange: this.onNumberSelect,
+						inputPlaceholder: "Number",
+						selectOptions: DEFAULT_DICE_NUMBERS,
+					},
+					{
+						title: "Sides",
+						description: "Choose the number of sides for the dice.",
+						inputType: "select",
+						inputValue: this.props.sides,
+						inputOnChange: this.onSidesSelect,
+						inputPlaceholder: "Sides",
+						selectOptions: DEFAULT_DICE_SIDES,
+					},
+					{
+						title: "Modifier",
+						description: "Choose the modifier for the roll.",
+						inputType: "number",
+						inputValue: this.props.modifier,
+						inputOnChange: this.onModifierChange,
+						inputPlaceholder: "Modifier",
+					},
+				]}
+				button={{
+					id: "DiceForm-Button",
+					onClick: this.onSubmit,
+					name: "Roll dice",
+				}}
+			/>
+		);
 	}
 }
 

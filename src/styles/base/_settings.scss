@@ -45,6 +45,20 @@ $spacing-xl: 2.5rem;
 
 $view-width: 768px;
 
+@mixin set-max-page-width($class-name) {
+	.#{$class-name} {
+		width: 100%;
+	}
+
+	@media (min-width: $view-width) {
+		.#{$class-name} {
+			width: $view-width;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
 /*******************************************
  *
  * Themes
@@ -56,8 +70,8 @@ $theme-colors: (
 		"accent": rgb(0, 195, 255),
 		"bg": #222,
 		"bg-header": #111,
-		"header": #eee,
-		"text": #eee,
+		"header": #ddd,
+		"text": #ddd,
 	),
 	"light": (
 		"accent": rgb(255, 139, 121),

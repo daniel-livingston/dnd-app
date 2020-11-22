@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => (
 	<div className='sidebar column-center bg-secondary'>
-		<Link className='sidebar-button' to='/'>
+		<NavLink className='sidebar-button' to='/' activeClassName='active-sidebar-button' exact>
 			<div className='sidebar__item'>
 				<svg viewBox='0 0 16 16' className='icon-w' xmlns='http://www.w3.org/2000/svg'>
 					<path
@@ -17,8 +17,8 @@ const Sidebar = () => (
 				</svg>
 				<div className='sidebar__item__title text-primary'>Home</div>
 			</div>
-		</Link>
-		<Link className='sidebar-button' to='/canvas'>
+		</NavLink>
+		<NavLink className='sidebar-button' to='/canvas' activeClassName='active-sidebar-button'>
 			<div className='sidebar__item'>
 				<svg className='icon-w' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'>
 					<path d='M8.473.337a.5.5 0 0 0-.946 0L6.954 2h2.092L8.473.337zM12.15 11h-1.058l1.435 4.163a.5.5 0 0 0 .946-.326L12.15 11zM8.5 11h-1v2.5a.5.5 0 0 0 1 0V11zm-3.592 0H3.85l-1.323 3.837a.5.5 0 1 0 .946.326L4.908 11z' />
@@ -29,8 +29,8 @@ const Sidebar = () => (
 				</svg>
 				<div className='sidebar__item__title text-primary'>Canvas</div>
 			</div>
-		</Link>
-		<Link className='sidebar-button' to='/dice'>
+		</NavLink>
+		<NavLink className='sidebar-button' to='/dice' activeClassName='active-sidebar-button'>
 			<div className='sidebar__item'>
 				<svg viewBox='0 0 16 16' className='icon-w' xmlns='http://www.w3.org/2000/svg'>
 					<path
@@ -43,8 +43,8 @@ const Sidebar = () => (
 				</svg>
 				<div className='sidebar__item__title text-primary'>Dice</div>
 			</div>
-		</Link>
-		<Link className='sidebar-button' to='/settings'>
+		</NavLink>
+		<NavLink className='sidebar-button' to='/settings' activeClassName='active-sidebar-button'>
 			<div className='sidebar__item'>
 				<svg viewBox='0 0 16 16' className='icon-w' xmlns='http://www.w3.org/2000/svg'>
 					<path
@@ -58,7 +58,7 @@ const Sidebar = () => (
 				</svg>
 				<div className='sidebar__item__title text-primary'>Settings</div>
 			</div>
-		</Link>
+		</NavLink>
 	</div>
 );
 

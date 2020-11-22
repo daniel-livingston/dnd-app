@@ -5,36 +5,28 @@ import { setTheme } from "../actions/theme";
 import { THEMES } from "../constants";
 
 export class SettingsForm extends React.Component {
-	onSubmit = (e) => {
-		e.preventDefault();
-	};
 	onThemeChange = (e) => {
 		this.props.setTheme(e.target.value);
 	};
 	render() {
-		const form = {
-			sections: [
-				{
-					header: "Appearance",
-					items: [
+		return (
+			<div className='SettingsForm'>
+				<Form
+					header='Appearance'
+					items={[
 						{
 							title: "Theme",
 							description: "Choose the theme for the app.",
-							type: "select",
-							value: this.props.theme.name,
-							onChange: this.onThemeChange,
-							options: THEMES.map((theme) => theme.name),
+							inputType: "select",
+							inputValue: this.props.theme.name,
+							inputOnChange: this.onThemeChange,
+							inputPlaceholder: "Theme",
+							selectOptions: THEMES.map((theme) => theme.name),
 						},
-					],
-				},
-			],
-			isCard: false,
-			submit: {
-				onSubmit: (e) => e.preventDefault(),
-			},
-		};
-
-		return <Form {...form} />;
+					]}
+				/>
+			</div>
+		);
 	}
 }
 

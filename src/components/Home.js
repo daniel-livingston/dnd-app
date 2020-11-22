@@ -53,10 +53,10 @@ export const Home = (props) => {
 	};
 	return (
 		<div className='home-container'>
-			<div className='home'>
+			{/* <div className='home'>
 				{props.isLoggedIn ? null : <Form {...signInForm} />}
 				{props.inRoom ? <RoomInfo /> : <Form {...joinRoomForm} />}
-			</div>
+			</div> */}
 		</div>
 	);
 };

@@ -1,0 +1,15 @@
+.FormItemInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+
+	flex: 1 1 50%;
+}
+
+.FormItemInfo-Title {
+	font-size: $header-m;
+}
+
+.FormItemInfo-Description {
+	font-size: $text-s;
+}
