@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormItem> renders correctly 1`] = `
+<div
+  className="FormItem"
+>
+  <FormItemInfo
+    description="Test description"
+    title="Test title"
+  />
+  <FormItemInput
+    onChange={[MockFunction]}
+    placeholder="Test placeholder"
+    type="text"
+    value="Test value"
+  />
+</div>
+`;

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SettingsView> renders correctly 1`] = `
+<Connect(View)
+  description="Customize your settings."
+  title="Settings"
+>
+  <Connect(SettingsForm) />
+</Connect(View)>
+`;

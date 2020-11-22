@@ -5,18 +5,18 @@ exports[`<View> renders correctly 1`] = `
   className="content"
 >
   <div
-    className="content__header"
+    className="content__header row-space-between bg-secondary"
   >
     <div
       className="content__header__info"
     >
       <h1
-        className="content__header__title"
+        className="content__header__title text-xl"
       >
         Test title
       </h1>
       <p
-        className="content__header__description"
+        className="content__header__description text-s"
       >
         Test description
       </p>

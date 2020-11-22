@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SidebarLink> renders correctly 1`] = `
+<NavLink
+  activeClassName="SidebarLink-active"
+  className="SidebarLink"
+  to="/test"
+>
+  <div
+    className="SidebarLink-item"
+  >
+    <Icon />
+    <div
+      className="SidebarLink-title text-primary"
+    >
+      Test
+    </div>
+  </div>
+</NavLink>
+`;

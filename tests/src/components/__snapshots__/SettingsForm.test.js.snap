@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SettingsForm> renders correctly 1`] = `
+<div
+  className="SettingsForm"
+>
+  <Form
+    header="Appearance"
+    items={
+      Array [
+        Object {
+          "description": "Choose the theme for the app.",
+          "inputOnChange": [Function],
+          "inputPlaceholder": "Theme",
+          "inputType": "select",
+          "inputValue": "Test",
+          "selectOptions": Array [
+            "Light",
+            "Dark",
+          ],
+          "title": "Theme",
+        },
+      ]
+    }
+  />
+</div>
+`;

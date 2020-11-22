@@ -25,30 +25,218 @@ exports[`<DiceForm> renders correctly 1`] = `
       updateSides={[Function]}
     >
       <Form
-        sections={
+        button={
+          Object {
+            "id": "DiceForm-Button",
+            "name": "Roll dice",
+            "onClick": [Function],
+          }
+        }
+        className="DiceForm"
+        header="Dice Roller"
+        items={
           Array [
             Object {
-              "header": "Dice Roller",
-              "items": Array [
-                Object {
-                  "description": "Choose the number of dice to roll.",
-                  "onChange": [Function],
-                  "options": Array [
+              "description": "Choose the number of dice to roll.",
+              "inputOnChange": [Function],
+              "inputPlaceholder": "Number",
+              "inputType": "select",
+              "inputValue": 1,
+              "selectOptions": Array [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+              ],
+              "title": "Number",
+            },
+            Object {
+              "description": "Choose the number of sides for the dice.",
+              "inputOnChange": [Function],
+              "inputPlaceholder": "Sides",
+              "inputType": "select",
+              "inputValue": 20,
+              "selectOptions": Array [
+                4,
+                6,
+                8,
+                10,
+                12,
+                20,
+                100,
+              ],
+              "title": "Sides",
+            },
+            Object {
+              "description": "Choose the modifier for the roll.",
+              "inputOnChange": [Function],
+              "inputPlaceholder": "Modifier",
+              "inputType": "number",
+              "inputValue": 0,
+              "title": "Modifier",
+            },
+          ]
+        }
+      >
+        <form
+          className="Form"
+          onSubmit={[Function]}
+        >
+          <h2
+            className="Form-header"
+          >
+            Dice Roller
+          </h2>
+          <FormItem
+            description="Choose the number of dice to roll."
+            inputOnChange={[Function]}
+            inputPlaceholder="Number"
+            inputType="select"
+            inputValue={1}
+            key="Number"
+            selectOptions={
+              Array [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+              ]
+            }
+            title="Number"
+          >
+            <div
+              className="FormItem"
+            >
+              <FormItemInfo
+                description="Choose the number of dice to roll."
+                title="Number"
+              >
+                <div
+                  className="FormItemInfo"
+                >
+                  <h3
+                    className="FormItemInfo-Title"
+                  >
+                    Number
+                  </h3>
+                  <p
+                    className="FormItemInfo-Description"
+                  >
+                    Choose the number of dice to roll.
+                  </p>
+                </div>
+              </FormItemInfo>
+              <FormItemInput
+                onChange={[Function]}
+                options={
+                  Array [
                     1,
                     2,
                     3,
                     4,
                     5,
                     6,
-                  ],
-                  "title": "Number",
-                  "type": "select",
-                  "value": 1,
-                },
-                Object {
-                  "description": "Choose the number of sides for the dice.",
-                  "onChange": [Function],
-                  "options": Array [
+                  ]
+                }
+                placeholder="Number"
+                type="select"
+                value={1}
+              >
+                <select
+                  className="FormItemInput FormItemInput-Select"
+                  onChange={[Function]}
+                  value={1}
+                >
+                  <option
+                    key="1"
+                    value={1}
+                  >
+                    1
+                  </option>
+                  <option
+                    key="2"
+                    value={2}
+                  >
+                    2
+                  </option>
+                  <option
+                    key="3"
+                    value={3}
+                  >
+                    3
+                  </option>
+                  <option
+                    key="4"
+                    value={4}
+                  >
+                    4
+                  </option>
+                  <option
+                    key="5"
+                    value={5}
+                  >
+                    5
+                  </option>
+                  <option
+                    key="6"
+                    value={6}
+                  >
+                    6
+                  </option>
+                </select>
+              </FormItemInput>
+            </div>
+          </FormItem>
+          <FormItem
+            description="Choose the number of sides for the dice."
+            inputOnChange={[Function]}
+            inputPlaceholder="Sides"
+            inputType="select"
+            inputValue={20}
+            key="Sides"
+            selectOptions={
+              Array [
+                4,
+                6,
+                8,
+                10,
+                12,
+                20,
+                100,
+              ]
+            }
+            title="Sides"
+          >
+            <div
+              className="FormItem"
+            >
+              <FormItemInfo
+                description="Choose the number of sides for the dice."
+                title="Sides"
+              >
+                <div
+                  className="FormItemInfo"
+                >
+                  <h3
+                    className="FormItemInfo-Title"
+                  >
+                    Sides
+                  </h3>
+                  <p
+                    className="FormItemInfo-Description"
+                  >
+                    Choose the number of sides for the dice.
+                  </p>
+                </div>
+              </FormItemInfo>
+              <FormItemInput
+                onChange={[Function]}
+                options={
+                  Array [
                     4,
                     6,
                     8,
@@ -56,207 +244,143 @@ exports[`<DiceForm> renders correctly 1`] = `
                     12,
                     20,
                     100,
-                  ],
-                  "title": "Sides",
-                  "type": "select",
-                  "value": 20,
-                },
-                Object {
-                  "description": "Choose the modifier to add onto the roll.",
-                  "onChange": [Function],
-                  "title": "Modifier",
-                  "type": "number",
-                  "value": 0,
-                },
-              ],
-            },
-          ]
-        }
-        submit={
-          Object {
-            "buttonId": "roll-dice-button",
-            "buttonName": "Roll dice",
-            "onSubmit": [Function],
-          }
-        }
-      >
-        <form
-          className="form"
-          onSubmit={[Function]}
-        >
-          <div
-            className="form__section"
-            key="Dice Roller"
-          >
-            <h2
-              className="form__section-header"
-            >
-              Dice Roller
-            </h2>
-            <div
-              className="form__section-body"
-              key="Number"
-            >
-              <div
-                className="form__section-info"
-              >
-                <h3
-                  className="form__input-title"
-                >
-                  Number
-                </h3>
-                <p
-                  className="form__input-description"
-                >
-                  Choose the number of dice to roll.
-                </p>
-              </div>
-              <select
-                className="form__select"
-                onChange={[Function]}
-                value={1}
-              >
-                <option
-                  key="1"
-                  value={1}
-                >
-                  1
-                </option>
-                <option
-                  key="2"
-                  value={2}
-                >
-                  2
-                </option>
-                <option
-                  key="3"
-                  value={3}
-                >
-                  3
-                </option>
-                <option
-                  key="4"
-                  value={4}
-                >
-                  4
-                </option>
-                <option
-                  key="5"
-                  value={5}
-                >
-                  5
-                </option>
-                <option
-                  key="6"
-                  value={6}
-                >
-                  6
-                </option>
-              </select>
-            </div>
-            <div
-              className="form__section-body"
-              key="Sides"
-            >
-              <div
-                className="form__section-info"
-              >
-                <h3
-                  className="form__input-title"
-                >
-                  Sides
-                </h3>
-                <p
-                  className="form__input-description"
-                >
-                  Choose the number of sides for the dice.
-                </p>
-              </div>
-              <select
-                className="form__select"
-                onChange={[Function]}
+                  ]
+                }
+                placeholder="Sides"
+                type="select"
                 value={20}
               >
-                <option
-                  key="4"
-                  value={4}
-                >
-                  4
-                </option>
-                <option
-                  key="6"
-                  value={6}
-                >
-                  6
-                </option>
-                <option
-                  key="8"
-                  value={8}
-                >
-                  8
-                </option>
-                <option
-                  key="10"
-                  value={10}
-                >
-                  10
-                </option>
-                <option
-                  key="12"
-                  value={12}
-                >
-                  12
-                </option>
-                <option
-                  key="20"
+                <select
+                  className="FormItemInput FormItemInput-Select"
+                  onChange={[Function]}
                   value={20}
                 >
-                  20
-                </option>
-                <option
-                  key="100"
-                  value={100}
-                >
-                  100
-                </option>
-              </select>
+                  <option
+                    key="4"
+                    value={4}
+                  >
+                    4
+                  </option>
+                  <option
+                    key="6"
+                    value={6}
+                  >
+                    6
+                  </option>
+                  <option
+                    key="8"
+                    value={8}
+                  >
+                    8
+                  </option>
+                  <option
+                    key="10"
+                    value={10}
+                  >
+                    10
+                  </option>
+                  <option
+                    key="12"
+                    value={12}
+                  >
+                    12
+                  </option>
+                  <option
+                    key="20"
+                    value={20}
+                  >
+                    20
+                  </option>
+                  <option
+                    key="100"
+                    value={100}
+                  >
+                    100
+                  </option>
+                </select>
+              </FormItemInput>
             </div>
+          </FormItem>
+          <FormItem
+            description="Choose the modifier for the roll."
+            inputOnChange={[Function]}
+            inputPlaceholder="Modifier"
+            inputType="number"
+            inputValue={0}
+            key="Modifier"
+            title="Modifier"
+          >
             <div
-              className="form__section-body"
-              key="Modifier"
+              className="FormItem"
             >
-              <div
-                className="form__section-info"
+              <FormItemInfo
+                description="Choose the modifier for the roll."
+                title="Modifier"
               >
-                <h3
-                  className="form__input-title"
+                <div
+                  className="FormItemInfo"
                 >
-                  Modifier
-                </h3>
-                <p
-                  className="form__input-description"
-                >
-                  Choose the modifier to add onto the roll.
-                </p>
-              </div>
-              <input
-                className="form__input"
+                  <h3
+                    className="FormItemInfo-Title"
+                  >
+                    Modifier
+                  </h3>
+                  <p
+                    className="FormItemInfo-Description"
+                  >
+                    Choose the modifier for the roll.
+                  </p>
+                </div>
+              </FormItemInfo>
+              <FormItemInput
                 onChange={[Function]}
+                placeholder="Modifier"
                 type="number"
                 value={0}
-              />
+              >
+                <input
+                  className="FormItemInput FormItemInput-Number"
+                  onChange={[Function]}
+                  type="number"
+                  value={0}
+                />
+              </FormItemInput>
             </div>
-          </div>
-          <div
-            className="form__button-container"
+          </FormItem>
+          <FormButton
+            id="DiceForm-Button"
+            name="Roll dice"
+            onClick={[Function]}
           >
-            <button
-              className="form__button"
-              id="roll-dice-button"
+            <div
+              className="FormButton-Container"
+              style={
+                Object {
+                  "justifyContent": "flex-end",
+                }
+              }
             >
-              Roll dice
-            </button>
-          </div>
+              <Button
+                id="DiceForm-Button"
+                name="Roll dice"
+                onClick={[Function]}
+                width="auto"
+              >
+                <button
+                  className="Button"
+                  id="DiceForm-Button"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "width": "auto",
+                    }
+                  }
+                >
+                  Roll dice
+                </button>
+              </Button>
+            </div>
+          </FormButton>
         </form>
       </Form>
     </DiceForm>

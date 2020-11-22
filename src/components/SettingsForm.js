@@ -5,6 +5,12 @@ import { setTheme } from "../actions/theme";
 import { THEMES } from "../constants";
 
 export class SettingsForm extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			testing: true,
+		};
+	}
 	onThemeChange = (e) => {
 		this.props.setTheme(e.target.value);
 	};

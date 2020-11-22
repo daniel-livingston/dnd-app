@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormItemInfo> renders correctly 1`] = `
+<div
+  className="FormItemInfo"
+>
+  <h3
+    className="FormItemInfo-Title"
+  >
+    Test title
+  </h3>
+  <p
+    className="FormItemInfo-Description"
+  >
+    Test description
+  </p>
+</div>
+`;
+
+exports[`<FormItemInfo> renders correctly when no description provided 1`] = `
+<div
+  className="FormItemInfo"
+>
+  <h3
+    className="FormItemInfo-Title"
+  >
+    Test title
+  </h3>
+</div>
+`;

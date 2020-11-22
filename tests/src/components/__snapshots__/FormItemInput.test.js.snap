@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormItemInput> renders number input correctly 1`] = `
+<input
+  className="FormItemInput FormItemInput-Number"
+  onChange={[MockFunction]}
+  type="number"
+  value={1}
+/>
+`;
+
+exports[`<FormItemInput> renders password input correctly 1`] = `
+<input
+  className="FormItemInput FormItemInput-Password"
+  onChange={[MockFunction]}
+  placeholder="Test placeholder"
+  type="text"
+  value="Test value"
+/>
+`;
+
+exports[`<FormItemInput> renders select element correctly 1`] = `
+<select
+  className="FormItemInput FormItemInput-Select"
+  onChange={[MockFunction]}
+  value="Test option 1"
+>
+  <option
+    key="Test option 1"
+    value="Test option 1"
+  >
+    Test option 1
+  </option>
+  <option
+    key="Test option 2"
+    value="Test option 2"
+  >
+    Test option 2
+  </option>
+</select>
+`;
+
+exports[`<FormItemInput> renders text input correctly 1`] = `
+<input
+  className="FormItemInput FormItemInput-Text"
+  onChange={[MockFunction]}
+  placeholder="Test placeholder"
+  type="text"
+  value="Test value"
+/>
+`;

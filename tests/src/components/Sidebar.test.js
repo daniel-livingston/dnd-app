@@ -1,13 +1,8 @@
 import React from "react";
+import { MemoryRouter } from "react-router-dom";
 import { mount, shallow } from "enzyme";
-import { MemoryRouter, Link } from "react-router-dom";
 import Sidebar from "../../../src/components/Sidebar";
-
-const wrappedSidebar = (
-	<MemoryRouter>
-		<Sidebar />
-	</MemoryRouter>
-);
+import SidebarLink from "../../../src/components/SidebarLink";
 
 describe("<Sidebar>", () => {
 	test("renders correctly", () => {
@@ -16,10 +11,32 @@ describe("<Sidebar>", () => {
 	});
 
 	test("renders correct links", () => {
-		const wrapper = mount(wrappedSidebar);
-		expect(wrapper.find(Link).at(0).prop("to")).toBe("/");
-		expect(wrapper.find(Link).at(1).prop("to")).toBe("/canvas");
-		expect(wrapper.find(Link).at(2).prop("to")).toBe("/dice");
-		expect(wrapper.find(Link).at(3).prop("to")).toBe("/settings");
+		const wrapper = mount(
+			<MemoryRouter>
+				<Sidebar />
+			</MemoryRouter>
+		);
+		expect(wrapper.find(SidebarLink)).toHaveLength(4);
+		expect(wrapper.find(SidebarLink).at(0).props()).toMatchObject({
+			to: "/",
+			Icon: expect.any(Function),
+			name: "Home",
+			exact: true,
+		});
+		expect(wrapper.find(SidebarLink).at(1).props()).toMatchObject({
+			to: "/canvas",
+			Icon: expect.any(Function),
+			name: "Canvas",
+		});
+		expect(wrapper.find(SidebarLink).at(2).props()).toMatchObject({
+			to: "/dice",
+			Icon: expect.any(Function),
+			name: "Dice",
+		});
+		expect(wrapper.find(SidebarLink).at(3).props()).toMatchObject({
+			to: "/settings",
+			Icon: expect.any(Function),
+			name: "Settings",
+		});
 	});
 });
