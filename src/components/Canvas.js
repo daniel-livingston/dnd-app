@@ -90,14 +90,16 @@ export class Canvas extends React.Component {
 		canvas.remove(canvas.getActiveObject());
 	};
 	initializeCanvas = (canvas) => {
-		const container = document.getElementById("canvas").parentElement.parentElement;
+		const container = document.getElementById("canvas").parentElement.parentElement
+			.parentElement;
 		this.setDimensions(container, canvas, true);
 		this.setProperties(canvas);
 		this.initializeEvents(canvas);
 		this.loadCanvas(canvas);
 	};
 	initializeEvents = (canvas) => {
-		const container = document.getElementById("canvas").parentElement.parentElement;
+		const container = document.getElementById("canvas").parentElement.parentElement
+			.parentElement;
 
 		// Window events
 		const onWindowResize = (e) => this.setDimensions(container, canvas, false);
@@ -172,8 +174,9 @@ export class Canvas extends React.Component {
 	};
 	setDimensions = (container, canvas, isFirstSizing) => {
 		const getWidescreenDimensions = (container, RES_WIDTH, RES_HEIGHT) => {
-			const width = container.clientWidth;
-			const height = container.clientHeight;
+			const width = window.innerWidth - 78;
+			const height =
+				container.clientHeight - document.getElementById("CanvasToolbar").clientHeight;
 
 			let desiredHeight, desiredWidth;
 
@@ -227,7 +230,7 @@ export class Canvas extends React.Component {
 		// return <canvas id='canvas'>Your browser does not support the HTML 5 canvas.</canvas>;
 		return (
 			<div className='canvas-wrapper'>
-				<div className='canvas-toolbar bg-secondary'>
+				<div id='CanvasToolbar' className='canvas-toolbar bg-secondary'>
 					{this.props.isDrawing ? (
 						<button
 							title='Select objects'

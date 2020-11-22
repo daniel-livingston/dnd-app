@@ -1,0 +1,16 @@
+.DiceHistory {
+	flex: 1 1 10px;
+	overflow: auto;
+}
+
+.DiceHistoryItem {
+	padding: $spacing-s 0;
+}
+
+.DiceHistoryItem-overview {
+	font-size: $text-l;
+}
+
+.DiceHistoryItem-details {
+	font-size: $text-s;
+}

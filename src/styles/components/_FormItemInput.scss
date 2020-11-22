@@ -1,7 +1,13 @@
 .FormItemInput {
+	max-width: 50%;
 	flex: 1 1 50%;
 	padding: $spacing-s;
 	font-size: $header-m;
+	height: 48px;
+}
+
+.FormItemInput-Number {
+	width: 50%;
 }
 
 .FormItemInput-Select {

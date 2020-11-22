@@ -3,7 +3,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 64px;
-	max-width: 64px;
-	min-width: 64px;
+	width: $sidebar-width;
+	max-width: $sidebar-width;
+	min-width: $sidebar-width;
 }

@@ -1,18 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
+import DiceHistoryItem from "./DiceHistoryItem";
 
 export const DiceHistory = (props) => (
-	<div className='dice-history'>
+	<div className='DiceHistory'>
 		{props.history.map((data) => (
-			<div key={`${data.name}:${data.time.valueOf()}`} className='dice-history__item'>
-				<div className='bold text-m'>
-					{data.time.toLocaleTimeString()}: <span className='accent'>{data.name}</span>{" "}
-					rolled <span className='accent'>{data.total}</span>!
-				</div>
-				<div className='italic text-s'>
-					{data.number}d{data.sides}: {data.rolls.join(", ")} +{data.modifier}
-				</div>
-			</div>
+			<DiceHistoryItem key={`${data.name}:${data.time.valueOf()}`} {...data} />
 		))}
 	</div>
 );

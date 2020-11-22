@@ -31,8 +31,7 @@ $icon-xl: 48px;
 $form-width: 576px;
 $tablet-width: 768px;
 
-$sidebar-width-s: 48px;
-$sidebar-width-l: 64px;
+$sidebar-width: 48px;
 
 $toolbar-height-s: 36px;
 $toolbar-height-l: 48px;
@@ -48,6 +47,8 @@ $view-width: 768px;
 @mixin set-max-page-width($class-name) {
 	.#{$class-name} {
 		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
 	}
 
 	@media (min-width: $view-width) {
